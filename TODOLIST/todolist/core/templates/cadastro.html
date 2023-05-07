@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <br><br>
+    <center>
+        <form style="border:solid blue;width:500px;padding:20px;background-color:lightblue" action={% url 'index' %} novalidate method="POST">
+            {% csrf_token %}
+            
+            <h3>Cadastre sua tarefa</h3>
+            Tarefa: {{ form_atividade.nome_atividade }}
+            <br><br>
+            Dia: {{ form_atividade.dia_atividade }}
+            <br><br>
+            Mês: {{ form_atividade.mes_atividade }}
+            <br><br>
+            <input type="submit" value="Cadastro">
+        </form>
+        <br><br>
+    <a href="/"><button>Voltar para a lista</button></a>
+</center>
+</body>
+</html>
